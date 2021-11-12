@@ -1,0 +1,22 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  generateName: express-sample-app-
+spec:
+  serviceAccountName: khouloud-belwaer-service
+  params:
+    - name: source-repo
+      value: https://github.com/cloud-native-garage-method-cohort/khouloud-belwaer-express-sample
+    - name: image-repo
+      value: quay.io/kbelwaer/express-sample
+  pipelineRef:
+    name: express-sample-app
+  workspaces:
+    - name: pipeline-shared-data
+      volumeClaimTemplate:
+        spec:
+          resources:
+            requests:
+              storage: 1Gi
+          accessModes:
+            - ReadWriteOnce
