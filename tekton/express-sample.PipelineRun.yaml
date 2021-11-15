@@ -6,7 +6,7 @@ spec:
   serviceAccountName: khouloud-belwaer-service
   params:
     - name: app-name
-      value: express-sample
+      value: express-sample-app
     - name: source-repo
       value: https://github.com/cloud-native-garage-method-cohort/khouloud-belwaer-express-sample
     - name: image-repo
