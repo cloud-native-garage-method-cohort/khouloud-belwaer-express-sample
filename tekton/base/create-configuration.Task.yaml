@@ -4,7 +4,7 @@ metadata:
   name: create-configuration
 spec:
   params:
-  - name: app-name
+  - name: app-namespace
     description: the name of the app
   - name: commit
     description: The precise commit SHA used for this task
@@ -42,8 +42,8 @@ spec:
 
       kustomize edit set image "*=$(params.image-repo):$(params.commit)"
 
-      kustomize edit set label "app.kubernetes.io/instance:$(params.app-name)"
-      kustomize edit set label "app.kubernetes.io/name:$(params.app-name)"
+      kustomize edit set label "app.kubernetes.io/instance:$(params.app-namespace)"
+      kustomize edit set label "app.kubernetes.io/name:$(params.app-namespace)"
 
       kustomize edit add annotation "app.openshift.io/vcs-uri:$(params.source-repo)"
       kustomize edit add annotation "app.openshift.io/vcs-ref:$(params.commit)"
