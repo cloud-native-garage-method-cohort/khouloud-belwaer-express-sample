@@ -37,7 +37,7 @@ spec:
       - name: sha
         value: $(tt.params.sha)
       pipelineRef:
-        name: nodejs
+        name: source
       workspaces:
       - name: pipeline-shared-data
         volumeClaimTemplate:
