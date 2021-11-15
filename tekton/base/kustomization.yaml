@@ -7,3 +7,4 @@ resources:
 - deploy.Task.yaml
 - express-sample.Pipeline.yaml
 - express-sample.Secret.yaml
+- webhook-receiver.EventListener.yaml
