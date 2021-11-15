@@ -76,5 +76,8 @@ spec:
        - create-configuration
       taskRef:
        name: deploy
+      workspaces:
+        - name: source
+          workspace: pipeline-shared-data
   workspaces:
     - name: pipeline-shared-data
